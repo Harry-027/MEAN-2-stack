@@ -1,0 +1,49 @@
+<div class="jumbotron">
+      <div class="container">
+        <h1>Games Collection</h1>
+        <p>Search by game title :</p>
+        <form (submit)="searchGames()">
+          <input type="text" [(ngModel)]="searchstr" [ngModelOptions]="{standalone: true}" class="form-control">
+          <br>
+          <button class="btn btn-primary btn-lg">Search</button>
+          </form>
+      </div>
+    </div>
+<div *ngIf="searchRes" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">SearchResult</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div *ngFor="let game of searchRes;let i=index"class="col-md-4">
+          <div *ngIf="i<15">
+          <img class="thumbnail" src="http://weneedfun.com/wp-content/uploads/2015/10/Cartoon-Games-1.png">
+          <div>
+            <h5>{{game.title}}</h5>
+          </div>
+          <button class="btn btn-danger btn-sm">{{game.score}}</button> &nbsp;&nbsp;
+           <img *ngIf="game.editors_choice == 'Y'" style="width:2.5em; height:2em;" src="./image/download.png"/>
+          <p style="color:black;"> <strong>Genre : {{game.genre}} </strong> &nbsp;</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Complete List</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div *ngFor="let game of list;let i=index"class="col-md-4">
+          <img class="thumbnail" src="http://weneedfun.com/wp-content/uploads/2015/10/Cartoon-Games-1.png">
+          <div>
+            <h5>{{game.title}}</h5>
+          </div>
+          <button class="btn btn-danger btn-sm">{{game.score}}</button> &nbsp;&nbsp;
+           <img *ngIf="game.editors_choice == 'Y'" style="width:2.5em; height:2em;" src="./image/download.png"/>
+          <p style="color:black;"> <strong>Genre : {{game.genre}} </strong> &nbsp;</p>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+Below are the steps to deploy the code on local environment:
+
+1) Download/Clone the repository
+2) Get the Mongo instance installed locally . Import the data from excel sheet in the collection 'users'.
+3) Open the command prompt as administrator. Go to bin path of locally installed Mongo instance and input the command - mongod. This will run the mongo server instance on port 27017.
+4) Open another Commandprompt console. Go to path GamesCollection/backend and run the command - 'npm install' and then 'node server'. This will run our server on port 8000 and will serve rest apis.
+5) Open another Command prompt console. Go to path GamesCollection/frontend. Run 'npm install' & then run 'npm start'. This will run our frontend on port 3000.
+6) Open the browser. Go to localhost:3000. This will serve our GamesCollection app.
